@@ -1,0 +1,136 @@
+import { FashionCollection } from '../types/fashion';
+
+export const CAMPAIGN_IMAGE_URL = '/src/assets/images/campaign_art_of_dressing_1795517703092.jpg';
+
+export const DEFAULT_COLLECTIONS: FashionCollection[] = [
+  {
+    id: 'summer-linen',
+    name: 'Summer Linen',
+    category: '01 · SUMMER',
+    description: 'Effortless elegance for warm summer days.',
+    editorialStory:
+      'Woven from Belgian long-staple flax and washed in soft mountain water, the Summer Linen study pairs fluid wide-leg tailoring with relaxed unlined blazers that breathe with every step.',
+    modelImage: '/src/assets/images/model_summer_linen_1795517679458.jpg',
+    coverImage: '/src/assets/images/model_summer_linen_1795517679458.jpg',
+    altText: 'Full-body lookbook portrait of a model in an ivory tailored linen blazer and wide-leg cream trousers.',
+    sortOrder: 1,
+    featured: true,
+  },
+  {
+    id: 'street-layers',
+    name: 'Street Layers',
+    category: '03 · URBAN',
+    description: 'Bold silhouettes and easy attitude for the city wanderer.',
+    editorialStory:
+      'Built for transitional avenues, Street Layers balances cropped mineral-washed denim outerwear against pleated utility cargo silhouettes and pared-back tonal calfskin sneakers.',
+    modelImage: '/src/assets/images/model_street_layers_1795517681077.jpg',
+    coverImage: '/src/assets/images/model_street_layers_1795517681077.jpg',
+    altText: 'Full-body lookbook portrait of a model in a cropped charcoal denim jacket, ecru knit tee, and relaxed olive cargo trousers.',
+    sortOrder: 2,
+    featured: true,
+  },
+  {
+    id: 'denim-story',
+    name: 'Denim Story',
+    category: '04 · DENIM',
+    description: 'Timeless denim with a modern edge.',
+    editorialStory:
+      'Cut from 14-ounce raw Japanese selvedge milled on vintage shuttle looms, Denim Story treats indigo twill with architectural discipline—sharp trench proportions, contrast topstitching, and sculptural volume.',
+    modelImage: '/src/assets/images/model_denim_story_1795517680677.jpg',
+    coverImage: '/src/assets/images/model_denim_story_1795517680677.jpg',
+    altText: 'Full-body lookbook portrait of a model in a belted dark indigo selvedge denim trench coat and matching tailored jeans.',
+    sortOrder: 3,
+    featured: true,
+  },
+  {
+    id: 'the-white-veil',
+    name: 'The White Veil',
+    category: '08 · BRIDAL',
+    description: "A cascade of lace and light. The moment you've always imagined.",
+    editorialStory:
+      'Constructed over forty atelier hours in silk duchesse and heirloom Chantilly lace, The White Veil captures quiet ceremony through draped bodices and weightless cathedral tulle.',
+    modelImage: '/src/assets/images/model_white_veil_1795517680990.jpg',
+    coverImage: '/src/assets/images/model_white_veil_1795517680990.jpg',
+    altText: 'Full-body bridal lookbook portrait of a model in an architectural ivory silk and Chantilly lace gown with floor-length veil.',
+    sortOrder: 4,
+    featured: true,
+  },
+  {
+    id: 'free-spirit',
+    name: 'Free Spirit',
+    category: '05 · BOHEMIAN',
+    description: 'Expressive silhouettes inspired by freedom and movement.',
+    editorialStory:
+      'Sun-baked terracotta hues and accordion-pleated habotai silk create kinetic volume in motion, anchored by hand-braided vegetable-tanned leather and brushed suede.',
+    modelImage: '/src/assets/images/model_free_spirit_1795517683053.jpg',
+    coverImage: '/src/assets/images/model_free_spirit_1795517683053.jpg',
+    altText: 'Full-body lookbook portrait of a model in a flowing pleated terracotta silk maxi dress belted with woven leather.',
+    sortOrder: 5,
+    featured: false,
+  },
+  {
+    id: 'evening-grace',
+    name: 'Evening Grace',
+    category: '06 · EVENING',
+    description: 'Refined eveningwear for unforgettable moments.',
+    editorialStory:
+      'Bias-cut liquid satin in deep obsidian charcoal skims the form without constraint, finished with an asymmetric draped shoulder and hand-hammered brass hardware.',
+    modelImage: '/src/assets/images/model_evening_grace_1795517683105.jpg',
+    coverImage: '/src/assets/images/model_evening_grace_1795517683105.jpg',
+    altText: 'Full-body evening lookbook portrait of a model in a floor-length obsidian silk satin asymmetric column gown.',
+    sortOrder: 6,
+    featured: true,
+  },
+  {
+    id: 'modern-minimal',
+    name: 'Modern Minimal',
+    category: '07 · MINIMAL',
+    description: 'Understated essentials with timeless character.',
+    editorialStory:
+      'Monochromatic stone double-faced cashmere and precision-pressed wool trousers distill dressing to pure line, proportion, and tactile warmth.',
+    modelImage: '/src/assets/images/model_modern_minimal_1795517682900.jpg',
+    coverImage: '/src/assets/images/model_modern_minimal_1795517682900.jpg',
+    altText: 'Full-body minimalist lookbook portrait of a model in a belted warm-stone cashmere coat and pleated trousers.',
+    sortOrder: 7,
+    featured: true,
+  },
+  {
+    id: 'golden-hour',
+    name: 'Golden Hour',
+    category: '09 · RESORT',
+    description: 'Warm tones and effortless holiday elegance.',
+    editorialStory:
+      'Washed sage mulberry silk shirts and fluid champagne resort trousers evoke late-afternoon coastal terraces—packable, luminous, and endlessly relaxed.',
+    modelImage: '/src/assets/images/model_golden_hour_1795517682962.jpg',
+    coverImage: '/src/assets/images/model_golden_hour_1795517682962.jpg',
+    altText: 'Full-body resort lookbook portrait of a model in a sage silk kaftan tunic and champagne pleated resort trousers.',
+    sortOrder: 8,
+    featured: false,
+  },
+  {
+    id: 'classic-tailoring',
+    name: 'Classic Tailoring',
+    category: '10 · FORMAL',
+    description: 'Contemporary tailoring with timeless sophistication.',
+    editorialStory:
+      'Full-canvas espresso virgin wool suiting with peaked lapels and generous drape celebrates heritage craftsmanship reimagined for contemporary posture.',
+    modelImage: '/src/assets/images/model_classic_tailoring_1795517682905.jpg',
+    coverImage: '/src/assets/images/model_classic_tailoring_1795517682905.jpg',
+    altText: 'Full-body formal tailoring lookbook portrait of a model in an espresso double-breasted wool suit.',
+    sortOrder: 9,
+    featured: false,
+  },
+  {
+    id: 'soft-romance',
+    name: 'Soft Romance',
+    category: '11 · ROMANTIC',
+    description: 'Delicate textures and graceful feminine silhouettes.',
+    editorialStory:
+      'Whisper-light silk organza in dusty rose and ivory tulle layers gently over floral guipure bodices, capturing poetry in quiet movement.',
+    modelImage: '/src/assets/images/model_soft_romance_1795517683972.jpg',
+    coverImage: '/src/assets/images/model_soft_romance_1795517683972.jpg',
+    altText: 'Full-body romantic lookbook portrait of a model in a layered dusty-rose and cream silk organza midi dress.',
+    sortOrder: 10,
+    featured: false,
+  },
+];

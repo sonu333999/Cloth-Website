@@ -1,0 +1,6 @@
+{
+  "name": "MAISON LUMIÈRE",
+  "description": "Luxury digital fashion magazine and interactive 3D circular lookbook showroom.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

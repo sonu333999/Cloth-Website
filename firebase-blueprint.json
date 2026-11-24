@@ -1,0 +1,178 @@
+{
+  "entities": {
+    "Collection": {
+      "title": "Collection",
+      "description": "A curated seasonal fashion lookbook collection.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "minLength": 1, "maxLength": 128, "pattern": "^[a-zA-Z0-9_\\-]+$" },
+        "name": { "type": "string", "minLength": 1, "maxLength": 120 },
+        "category": { "type": "string", "minLength": 1, "maxLength": 64 },
+        "description": { "type": "string", "minLength": 1, "maxLength": 500 },
+        "editorialStory": { "type": "string", "minLength": 1, "maxLength": 2000 },
+        "modelImage": { "type": "string", "minLength": 1, "maxLength": 1000 },
+        "coverImage": { "type": "string", "minLength": 1, "maxLength": 1000 },
+        "altText": { "type": "string", "minLength": 1, "maxLength": 300 },
+        "sortOrder": { "type": "number" },
+        "featured": { "type": "boolean" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["id", "name", "category", "description", "modelImage", "coverImage", "altText", "sortOrder", "featured", "createdAt", "updatedAt"]
+    },
+    "Product": {
+      "title": "Product",
+      "description": "A shoppable fashion piece belonging to a lookbook collection.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "minLength": 1, "maxLength": 128, "pattern": "^[a-zA-Z0-9_\\-]+$" },
+        "collectionId": { "type": "string", "minLength": 1, "maxLength": 128, "pattern": "^[a-zA-Z0-9_\\-]+$" },
+        "name": { "type": "string", "minLength": 1, "maxLength": 140 },
+        "description": { "type": "string", "minLength": 1, "maxLength": 600 },
+        "price": { "type": "number" },
+        "image": { "type": "string", "minLength": 1, "maxLength": 1000 },
+        "sizes": { "type": "array" },
+        "colors": { "type": "array" },
+        "stock": { "type": "number" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["id", "collectionId", "name", "description", "price", "image", "sizes", "colors", "stock", "createdAt", "updatedAt"]
+    },
+    "UserProfile": {
+      "title": "UserProfile",
+      "description": "Authenticated customer profile containing private PII.",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string", "minLength": 1, "maxLength": 128 },
+        "name": { "type": "string", "minLength": 1, "maxLength": 120 },
+        "email": { "type": "string", "format": "email", "maxLength": 254 },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["uid", "name", "email", "createdAt", "updatedAt"]
+    },
+    "AdminMember": {
+      "title": "AdminMember",
+      "description": "Authorized atelier administrator directory.",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string", "minLength": 1, "maxLength": 128 },
+        "email": { "type": "string", "format": "email", "maxLength": 254 },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["uid", "email", "createdAt"]
+    },
+    "CartItem": {
+      "title": "CartItem",
+      "description": "Item in a user's shopping bag.",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string", "minLength": 1, "maxLength": 128 },
+        "productId": { "type": "string", "minLength": 1, "maxLength": 128 },
+        "collectionId": { "type": "string", "minLength": 1, "maxLength": 128 },
+        "name": { "type": "string", "minLength": 1, "maxLength": 140 },
+        "price": { "type": "number" },
+        "image": { "type": "string", "minLength": 1, "maxLength": 1000 },
+        "size": { "type": "string", "minLength": 1, "maxLength": 16 },
+        "color": { "type": "string", "minLength": 1, "maxLength": 48 },
+        "quantity": { "type": "number" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["userId", "productId", "collectionId", "name", "price", "image", "size", "color", "quantity", "createdAt", "updatedAt"]
+    },
+    "WishlistItem": {
+      "title": "WishlistItem",
+      "description": "Item saved in a user's wishlist.",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string", "minLength": 1, "maxLength": 128 },
+        "productId": { "type": "string", "minLength": 1, "maxLength": 128 },
+        "collectionId": { "type": "string", "minLength": 1, "maxLength": 128 },
+        "name": { "type": "string", "minLength": 1, "maxLength": 140 },
+        "price": { "type": "number" },
+        "image": { "type": "string", "minLength": 1, "maxLength": 1000 },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["userId", "productId", "collectionId", "name", "price", "image", "createdAt"]
+    },
+    "Order": {
+      "title": "Order",
+      "description": "Customer atelier order record.",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string", "minLength": 1, "maxLength": 128 },
+        "customerEmail": { "type": "string", "format": "email", "maxLength": 254 },
+        "customerName": { "type": "string", "minLength": 1, "maxLength": 120 },
+        "shippingAddress": { "type": "string", "minLength": 5, "maxLength": 400 },
+        "items": { "type": "array" },
+        "totalAmount": { "type": "number" },
+        "status": { "type": "string", "enum": ["pending", "confirmed", "shipped", "delivered", "cancelled"] },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["userId", "customerEmail", "customerName", "shippingAddress", "items", "totalAmount", "status", "createdAt", "updatedAt"]
+    },
+    "NewsletterSubscription": {
+      "title": "NewsletterSubscription",
+      "description": "Editorial newsletter subscriber email.",
+      "type": "object",
+      "properties": {
+        "email": { "type": "string", "format": "email", "maxLength": 254 },
+        "status": { "type": "string", "enum": ["subscribed"] },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["email", "status", "createdAt"]
+    },
+    "BrandSettings": {
+      "title": "BrandSettings",
+      "description": "Editable storefront brand identity configuration.",
+      "type": "object",
+      "properties": {
+        "brandName": { "type": "string", "minLength": 1, "maxLength": 80 },
+        "tagline": { "type": "string", "minLength": 1, "maxLength": 200 },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["brandName", "tagline", "updatedAt"]
+    }
+  },
+  "firestore": {
+    "/collections/{collectionId}": {
+      "schema": { "$ref": "#/entities/Collection" },
+      "description": "Public lookbook collections, writable only by administrators."
+    },
+    "/products/{productId}": {
+      "schema": { "$ref": "#/entities/Product" },
+      "description": "Public shoppable pieces linked to collections, writable only by administrators."
+    },
+    "/users/{userId}": {
+      "schema": { "$ref": "#/entities/UserProfile" },
+      "description": "Private user account profiles restricted to owner or admin."
+    },
+    "/users/{userId}/cart/{cartItemId}": {
+      "schema": { "$ref": "#/entities/CartItem" },
+      "description": "User shopping bag items scoped to authenticated owner."
+    },
+    "/users/{userId}/wishlist/{wishlistItemId}": {
+      "schema": { "$ref": "#/entities/WishlistItem" },
+      "description": "User saved wishlist items scoped to authenticated owner."
+    },
+    "/orders/{orderId}": {
+      "schema": { "$ref": "#/entities/Order" },
+      "description": "Customer orders readable by owner or admin, status transitions guarded."
+    },
+    "/newsletter/{subscriberId}": {
+      "schema": { "$ref": "#/entities/NewsletterSubscription" },
+      "description": "Newsletter signups; public create allowed with strict schema, admin-only read/delete."
+    },
+    "/admins/{userId}": {
+      "schema": { "$ref": "#/entities/AdminMember" },
+      "description": "Admin role registry restricted to admins."
+    },
+    "/settings/{settingId}": {
+      "schema": { "$ref": "#/entities/BrandSettings" },
+      "description": "Publicly readable brand identity settings, writable only by admins."
+    }
+  }
+}
